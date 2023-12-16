@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message  create</title>
+</head>
+<body>
+    <h1>Edit Message</h1>
+    <form method="POST" action="/edit/{{data.id}}">
+        {% csrf_token %}
+        <table >
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="uname" value="{{data.name}}"/></td>
+
+            </tr>
+            <tr>
+                <td>Email Id:</td>
+                <td><input type="email" name="uemail" value="{{data.email}}"/></td>
+
+            </tr>
+            <tr>
+                <td>Mobile No.:</td>
+                <td><input type="number" name="mobile" value="{{data.mobile}}"/></td>
+
+            </tr>
+            <tr>
+                <td> Message:</td>
+                <td><textarea name="msg" rows="5" cols="30">{{data.msg}}</textarea> </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="send" value="update" /></td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>
